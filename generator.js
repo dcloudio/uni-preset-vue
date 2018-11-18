@@ -83,7 +83,7 @@ module.exports = (api, options, rootOptions) => {
 
 			if (fs.existsSync(tmp)) {
 				try {
-					require('rimraf/rimraf').sync.rm(tmp)
+					require('rimraf').sync(tmp)
 				} catch (e) {
 					console.error(e)
 				}
