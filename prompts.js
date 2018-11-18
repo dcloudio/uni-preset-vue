@@ -8,7 +8,7 @@ module.exports = [{
 			},
 			{
 				name: 'Hello uni-app',
-				value: 'hello uni-app'
+				value: 'dcloudio/hello-uniapp'
 			},
 			{
 				name: '登录模板',
