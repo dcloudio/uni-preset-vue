@@ -47,9 +47,6 @@ module.exports = (api, options, rootOptions) => {
 			vue: {
 				baseUrl: '/',
 				assetsDir: 'static'
-			},
-			vuePlugins: {
-				service: ['@dcloudio/vue-cli-plugin-uni/index.js']
 			}
 		})
 
