@@ -54,7 +54,10 @@ module.exports = (api, options, rootOptions) => {
 			},
 			vue: {
 				baseUrl: '/',
-				assetsDir: 'static'
+				assetsDir: 'static',
+				css: {
+					extract: false
+				}
 			}
 		})
 
