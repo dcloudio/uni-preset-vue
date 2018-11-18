@@ -8,7 +8,7 @@ module.exports = [{
 			},
 			{
 				name: 'Hello uni-app',
-				value: 'direct:https://www.inkercloud.com/masterkong/hello-uniapp.zip'
+				value: 'hello uni-app'
 			},
 			{
 				name: '登录模板',

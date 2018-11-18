@@ -24,7 +24,12 @@ module.exports = (api, options, rootOptions) => {
 				'@dcloudio/uni-h5': '^0.0.1'
 			},
 			devDependencies: {
-				'@dcloudio/vue-cli-plugin-uni': '^0.0.1'
+				'@dcloudio/vue-cli-plugin-uni': '^0.0.1',
+				'download-git-repo': '^1.1.0',
+				'globby': '^8.0.1',
+				'ora': '^3.0.0',
+				'rimraf': '^2.6.2',
+				'user-home': '^2.0.0'
 			},
 			babel: {
 				presets: [
@@ -41,9 +46,6 @@ module.exports = (api, options, rootOptions) => {
 			vue: {
 				baseUrl: '/',
 				assetsDir: 'static'
-			},
-			vuePlugins: {
-				service: [path.resolve(__dirname, '../vue-cli-plugin-uni-app')]
 			}
 		})
 
