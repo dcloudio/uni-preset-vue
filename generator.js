@@ -10,7 +10,6 @@ async function generate(dir, files, base = '') {
 		cwd: dir,
 		nodir: true
 	}).forEach(rawPath => {
-		console.log(rawPath)
 		files[path.join(base, rawPath)] = fs.readFileSync(path.resolve(dir, rawPath), 'utf-8')
 	})
 
@@ -25,7 +24,7 @@ module.exports = (api, options, rootOptions) => {
 				'@dcloudio/uni-h5': '^0.0.1'
 			},
 			devDependencies: {
-				'@dcloudio/vue-cli-plugin-uni': '^0.0.1'
+				'@dcloudio/vue-cli-plugin-uni': '^0.0.2'
 			},
 			babel: {
 				presets: [
