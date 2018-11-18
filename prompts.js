@@ -12,11 +12,11 @@ module.exports = [{
 			},
 			{
 				name: '登录模板',
-				value: 'hello uni-app'
+				value: 'dcloudio/uni-template-login'
 			},
 			{
 				name: '看图模板',
-				value: 'hello uni-app'
+				value: 'dcloudio/uni-template-picture'
 			},
 			{
 				name: '自定义模板',

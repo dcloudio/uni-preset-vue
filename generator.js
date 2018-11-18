@@ -1,6 +1,8 @@
 const fs = require('fs')
 const path = require('path')
 
+const isBinary = require('isbinaryfile')
+
 
 async function generate(dir, files, base = '') {
 
@@ -10,7 +12,12 @@ async function generate(dir, files, base = '') {
 		cwd: dir,
 		nodir: true
 	}).forEach(rawPath => {
-		files[path.join(base, rawPath)] = fs.readFileSync(path.resolve(dir, rawPath), 'utf-8')
+		const sourcePath = path.resolve(dir, rawPath)
+		if (isBinary.sync(sourcePath)) {
+			files[path.join(base, rawPath)] = fs.readFileSync(sourcePath) // return buffer
+		} else {
+			files[path.join(base, rawPath)] = fs.readFileSync(sourcePath, 'utf-8')
+		}
 	})
 
 }
@@ -21,10 +28,11 @@ module.exports = (api, options, rootOptions) => {
 
 		api.extendPackage({
 			dependencies: {
-				'@dcloudio/uni-h5': 'latest'
+				'vuex': '^3.0.1',
+				'@dcloudio/uni-h5': '*'
 			},
 			devDependencies: {
-				'@dcloudio/vue-cli-plugin-uni': 'latest'
+				'@dcloudio/vue-cli-plugin-uni': '*'
 			},
 			babel: {
 				presets: [
@@ -71,7 +79,11 @@ module.exports = (api, options, rootOptions) => {
 			const tmp = path.join(home, '.uni-app/templates', template.replace(/[\/:]/g, '-'), 'src')
 
 			if (fs.existsSync(tmp)) {
-				require('rimraf').sync.rm(tmp)
+				try {
+					require('rimraf').sync.rm(tmp)
+				} catch (e) {
+					console.error(e)
+				}
 			}
 
 			await new Promise((resolve, reject) => {
