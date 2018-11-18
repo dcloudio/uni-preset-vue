@@ -38,9 +38,18 @@ module.exports = (api, options, rootOptions) => {
 				'Android >= 4.4',
 				'ios >= 8'
 			],
+			postcss: {
+				plugins: {
+					autoprefixer: {},
+					'@dcloudio/vue-cli-plugin-uni/packages/postcss': {}
+				}
+			},
 			vue: {
 				baseUrl: '/',
 				assetsDir: 'static'
+			},
+			vuePlugins: {
+				service: ['@dcloudio/vue-cli-plugin-uni/index.js']
 			}
 		})
 
