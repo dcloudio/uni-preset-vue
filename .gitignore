@@ -1,1 +1,14 @@
-bin/
+.yarn-integrity
+.bin/
+*.md
+.npmignore
+*.yml
+*.jshintrc
+.eslintrc.json
+*.markdown
+Makefile
+test/
+LICENSE
+license
+LICENSE.MIT
+package.json
