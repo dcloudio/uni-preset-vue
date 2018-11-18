@@ -4,15 +4,16 @@ const path = require('path')
 
 async function generate(dir, files, base = '') {
 
-	const globby = require('globby')
+	const glob = require('glob')
 
-	const _files = await globby(['**/*'], {
-		cwd: dir
+	glob.sync('**/*', {
+		cwd: dir,
+		nodir: true
+	}).forEach(rawPath => {
+		console.log(rawPath)
+		files[path.join(base, rawPath)] = fs.readFileSync(path.resolve(dir, rawPath), 'utf-8')
 	})
 
-	for (const rawPath of _files) {
-		files[path.join(base, rawPath)] = fs.readFileSync(path.resolve(dir, rawPath), 'utf-8')
-	}
 }
 
 module.exports = (api, options, rootOptions) => {
