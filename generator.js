@@ -29,8 +29,7 @@ module.exports = (api, options, rootOptions) => {
 		api.extendPackage({
 			dependencies: {
 				'vuex': '^3.0.1',
-				'@dcloudio/uni-h5': '*',
-				'@vue/cli-service': '^3.1.4'
+				'@dcloudio/uni-h5': '*'
 			},
 			devDependencies: {
 				'@dcloudio/vue-cli-plugin-uni': '*'
