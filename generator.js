@@ -21,10 +21,10 @@ module.exports = (api, options, rootOptions) => {
 
 		api.extendPackage({
 			dependencies: {
-				'@dcloudio/uni-h5': '^0.0.1'
+				'@dcloudio/uni-h5': 'latest'
 			},
 			devDependencies: {
-				'@dcloudio/vue-cli-plugin-uni': '^0.0.2'
+				'@dcloudio/vue-cli-plugin-uni': 'latest'
 			},
 			babel: {
 				presets: [
