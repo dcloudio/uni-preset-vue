@@ -29,7 +29,8 @@ module.exports = (api, options, rootOptions) => {
 		api.extendPackage({
 			dependencies: {
 				'vuex': '^3.0.1',
-				'@dcloudio/uni-h5': '*'
+				'@dcloudio/uni-h5': '*',
+				'@vue/cli-service': '^3.1.4'
 			},
 			devDependencies: {
 				'@dcloudio/vue-cli-plugin-uni': '*'
@@ -83,7 +84,7 @@ module.exports = (api, options, rootOptions) => {
 
 			if (fs.existsSync(tmp)) {
 				try {
-					require('rimraf').sync.rm(tmp)
+					require('rimraf/rimraf').sync.rm(tmp)
 				} catch (e) {
 					console.error(e)
 				}
