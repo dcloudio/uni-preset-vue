@@ -34,30 +34,18 @@ module.exports = (api, options, rootOptions) => {
 
 		api.extendPackage({
 			dependencies: {
+				'flyio': '^0.6.2',
 				'vuex': '^3.0.1',
 				'@dcloudio/uni-h5': '*'
 			},
 			devDependencies: {
 				'@dcloudio/vue-cli-plugin-uni': '*'
 			},
-			babel: {
-				presets: [
-					['@vue/app', {
-						useBuiltIns: 'entry'
-					}]
-				]
-			},
 			browserslist: [
 				'last 3 versions',
 				'Android >= 4.4',
 				'ios >= 8'
-			],
-			postcss: {
-				plugins: {
-					autoprefixer: {},
-					'@dcloudio/vue-cli-plugin-uni/packages/postcss': {}
-				}
-			}
+			]
 		})
 
 		Object.keys(files).forEach(name => {
