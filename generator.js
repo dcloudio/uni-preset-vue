@@ -51,13 +51,6 @@ module.exports = (api, options, rootOptions) => {
 					autoprefixer: {},
 					'@dcloudio/vue-cli-plugin-uni/packages/postcss': {}
 				}
-			},
-			vue: {
-				baseUrl: '/',
-				assetsDir: 'static',
-				css: {
-					extract: false
-				}
 			}
 		})
 

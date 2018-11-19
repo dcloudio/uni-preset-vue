@@ -554,6 +554,10 @@ strip-dirs@^2.0.0:
   dependencies:
     is-natural-number "^4.0.1"
 
+strip-json-comments@^2.0.1:
+  version "2.0.1"
+  resolved "http://registry.npm.taobao.org/strip-json-comments/download/strip-json-comments-2.0.1.tgz#3c531942e908c2697c0ec344858c286c7ca0a60a"
+
 strip-outer@^1.0.0:
   version "1.0.1"
   resolved "http://registry.npm.taobao.org/strip-outer/download/strip-outer-1.0.1.tgz#b2fd2abf6604b9d1e6013057195df836b8a9d631"
