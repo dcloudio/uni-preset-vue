@@ -32,20 +32,24 @@ module.exports = (api, options, rootOptions) => {
 
 	api.render(async function(files) {
 
-		api.extendPackage({
-			dependencies: {
-				'flyio': '^0.6.2',
-				'vuex': '^3.0.1',
-				'@dcloudio/uni-h5': '*'
-			},
-			devDependencies: {
-				'@dcloudio/vue-cli-plugin-uni': '*'
-			},
-			browserslist: [
-				'last 3 versions',
-				'Android >= 4.4',
-				'ios >= 8'
-			]
+		api.extendPackage(pkg => {
+			delete pkg.postcss
+			delete pkg.browserslist
+			return {
+				dependencies: {
+					'flyio': '^0.6.2',
+					'vuex': '^3.0.1',
+					'@dcloudio/uni-h5': '*'
+				},
+				devDependencies: {
+					'@dcloudio/vue-cli-plugin-uni': '*'
+				},
+				browserslist: [
+					'last 3 versions',
+					'Android >= 4.4',
+					'ios >= 8'
+				]
+			}
 		})
 
 		Object.keys(files).forEach(name => {
