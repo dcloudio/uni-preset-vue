@@ -4,7 +4,28 @@ const path = require('path')
 const isBinary = require('isbinaryfile')
 const stripJsonComments = require('strip-json-comments')
 
+async function generate(dir, files, base = '') {
 
+	const glob = require('glob')
+
+	glob.sync('**/*', {
+		cwd: dir,
+		nodir: true
+	}).forEach(rawPath => {
+		const sourcePath = path.resolve(dir, rawPath)
+		if (isBinary.sync(sourcePath)) {
+			files[path.join(base, rawPath)] = fs.readFileSync(sourcePath) // return buffer
+		} else {
+			const content = fs.readFileSync(sourcePath, 'utf-8')
+			if (sourcePath.indexOf('manifest.json') !== -1 || sourcePath.indexOf('pages.json') !== -1) {
+				files[path.join(base, rawPath)] = JSON.stringify(JSON.parse(stripJsonComments(content)), null, 2)
+			} else {
+				files[path.join(base, rawPath)] = content
+			}
+		}
+	})
+
+}
 
 module.exports = (api, options, rootOptions) => {
 
