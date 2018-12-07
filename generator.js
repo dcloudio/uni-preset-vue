@@ -56,7 +56,10 @@ module.exports = (api, options, rootOptions) => {
 			},
 			devDependencies: {
 				'cross-env': '^5.2.0',
-				'@dcloudio/vue-cli-plugin-uni': '*'
+				'@dcloudio/uni-cli-shared': '*',
+				'@dcloudio/vue-cli-plugin-uni': '*',
+				'@dcloudio/webpack-uni-mp-loader': '*',
+				'@dcloudio/webpack-uni-pages-loader': '*'
 			},
 			browserslist: [
 				'last 3 versions',
