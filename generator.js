@@ -48,7 +48,6 @@ module.exports = (api, options, rootOptions) => {
 			dependencies: {
 				'flyio': '^0.6.2',
 				'vuex': '^3.0.1',
-				'megalo': '^0.5.4',
 				'@dcloudio/uni-h5': '*',
 				'@dcloudio/uni-mp-weixin': '*',
 				'@dcloudio/uni-mp-baidu': '*',
