@@ -1,3 +1,3 @@
 # @uni-app/vue-cli-preset-uni-app
 
-> uni-app plugin for vue-cli
+> uni-app preset for vue-cli
