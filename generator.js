@@ -13,14 +13,20 @@ async function generate(dir, files, base = '') {
 		nodir: true
 	}).forEach(rawPath => {
 		const sourcePath = path.resolve(dir, rawPath)
+		const filename = path.join(base, rawPath)
+
 		if (isBinary.sync(sourcePath)) {
-			files[path.join(base, rawPath)] = fs.readFileSync(sourcePath) // return buffer
+			files[filename] = fs.readFileSync(sourcePath) // return buffer
 		} else {
 			const content = fs.readFileSync(sourcePath, 'utf-8')
 			if (sourcePath.indexOf('manifest.json') !== -1 || sourcePath.indexOf('pages.json') !== -1) {
-				files[path.join(base, rawPath)] = JSON.stringify(JSON.parse(stripJsonComments(content)), null, 2)
+				files[filename] = JSON.stringify(JSON.parse(stripJsonComments(content)), null, 2)
+			} else if (filename.charAt(0) === '_' && filename.charAt(1) !== '_') {
+				files[`.${filename.slice(1)}`] = content
+			} else if (filename.charAt(0) === '_' && filename.charAt(1) === '_') {
+				files[`${filename.slice(1)}`] = content
 			} else {
-				files[path.join(base, rawPath)] = content
+				files[filename] = content
 			}
 		}
 	})
