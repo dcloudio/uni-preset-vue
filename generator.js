@@ -23,6 +23,8 @@ async function generate(dir, files, base = '') {
 				files[filename] = JSON.stringify(JSON.parse(stripJsonComments(content)), null, 2)
 			} else if (filename.charAt(0) === '_' && filename.charAt(1) !== '_') {
 				files[`.${filename.slice(1)}`] = content
+			} else if (filename.charAt(0) === '_' && filename.charAt(1) === '_') {
+				files[`${filename.slice(1)}`] = content
 			} else {
 				files[filename] = content
 			}
