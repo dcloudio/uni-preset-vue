@@ -2,7 +2,7 @@ const fs = require('fs')
 const path = require('path')
 
 const isBinary = require('isbinaryfile')
-const stripJsonComments = require('strip-json-comments')
+// const stripJsonComments = require('strip-json-comments')
 
 async function generate(dir, files, base = '') {
 
@@ -19,9 +19,11 @@ async function generate(dir, files, base = '') {
 			files[filename] = fs.readFileSync(sourcePath) // return buffer
 		} else {
 			const content = fs.readFileSync(sourcePath, 'utf-8')
-			if (sourcePath.indexOf('manifest.json') !== -1 || sourcePath.indexOf('pages.json') !== -1) {
-				files[filename] = JSON.stringify(JSON.parse(stripJsonComments(content)), null, 2)
-			} else if (filename.charAt(0) === '_' && filename.charAt(1) !== '_') {
+//不再移除注释，需要通过注释支持条件编译（之前移除注释，主要为了 ui.js 操作 json 文件）            
+// 			if (sourcePath.indexOf('manifest.json') !== -1 || sourcePath.indexOf('pages.json') !== -1) {
+// 				files[filename] = JSON.stringify(JSON.parse(stripJsonComments(content)), null, 2)
+// 			} else 
+            if (filename.charAt(0) === '_' && filename.charAt(1) !== '_') {
 				files[`.${filename.slice(1)}`] = content
 			} else if (filename.charAt(0) === '_' && filename.charAt(1) === '_') {
 				files[`${filename.slice(1)}`] = content
