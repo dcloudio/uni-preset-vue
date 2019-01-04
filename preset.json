@@ -1,14 +1,14 @@
 {
-	"useConfigFiles": false,
-	"plugins": {
-		"@dcloudio/vue-cli-plugin-uni": {},
-		"@vue/cli-plugin-babel": {
-			"version": "3.1.1",
-			"presets": [
-				["@vue/app", {
-					"useBuiltIns": "entry"
-				}]
-			]
-		}
-	}
+    "useConfigFiles": false,
+    "plugins": {
+        "@dcloudio/vue-cli-plugin-uni": {},
+        "@vue/cli-plugin-babel": {
+            "version": "3.2.2",
+            "presets": [
+                ["@vue/app", {
+                    "useBuiltIns": "entry"
+                }]
+            ]
+        }
+    }
 }

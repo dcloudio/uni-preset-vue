@@ -2,85 +2,95 @@ const fs = require('fs')
 const path = require('path')
 
 const isBinary = require('isbinaryfile')
-// const stripJsonComments = require('strip-json-comments')
 
-async function generate(dir, files, base = '') {
+async function generate (dir, files, base = '') {
+  const glob = require('glob')
 
-	const glob = require('glob')
+  glob.sync('**/*', {
+    cwd: dir,
+    nodir: true
+  }).forEach(rawPath => {
+    const sourcePath = path.resolve(dir, rawPath)
+    const filename = path.join(base, rawPath)
 
-	glob.sync('**/*', {
-		cwd: dir,
-		nodir: true
-	}).forEach(rawPath => {
-		const sourcePath = path.resolve(dir, rawPath)
-		const filename = path.join(base, rawPath)
-
-		if (isBinary.sync(sourcePath)) {
-			files[filename] = fs.readFileSync(sourcePath) // return buffer
-		} else {
-			const content = fs.readFileSync(sourcePath, 'utf-8')
-//不再移除注释，需要通过注释支持条件编译（之前移除注释，主要为了 ui.js 操作 json 文件）            
-// 			if (sourcePath.indexOf('manifest.json') !== -1 || sourcePath.indexOf('pages.json') !== -1) {
-// 				files[filename] = JSON.stringify(JSON.parse(stripJsonComments(content)), null, 2)
-// 			} else 
-            if (filename.charAt(0) === '_' && filename.charAt(1) !== '_') {
-				files[`.${filename.slice(1)}`] = content
-			} else if (filename.charAt(0) === '_' && filename.charAt(1) === '_') {
-				files[`${filename.slice(1)}`] = content
-			} else {
-				files[filename] = content
-			}
-		}
-	})
-
+    if (isBinary.sync(sourcePath)) {
+      files[filename] = fs.readFileSync(sourcePath) // return buffer
+    } else {
+      const content = fs.readFileSync(sourcePath, 'utf-8')
+      if (filename.charAt(0) === '_' && filename.charAt(1) !== '_') {
+        files[`.${filename.slice(1)}`] = content
+      } else if (filename.charAt(0) === '_' && filename.charAt(1) === '_') {
+        files[`${filename.slice(1)}`] = content
+      } else {
+        files[filename] = content
+      }
+    }
+  })
 }
 
 module.exports = (api, options, rootOptions) => {
+  if (options.template === 'default-ts') { // 启用 typescript
+    api.extendPackage(pkg => {
+      return {
+        dependencies: {
+          'vue-class-component': '^6.3.2',
+          'vue-property-decorator': '^7.2.0'
+        },
+        devDependencies: {
+          '@babel/plugin-syntax-typescript': '^7.2.0',
+          '@dcloudio/types': '*',
+          '@vue/cli-plugin-typescript': '^3.2.2',
+          'typescript': api.hasPlugin('eslint') ? '~3.1.1' : '^3.0.0'
+        }
+      }
+    })
+  }
 
-	api.render(async function(files) {
+  api.render(async function (files) {
+    Object.keys(files).forEach(name => {
+      delete files[name]
+    })
 
-		Object.keys(files).forEach(name => {
-			delete files[name]
-		})
+    const template = options.repo || options.template
 
-		const template = options.repo || options.template
+    const base = 'src'
 
-		const base = 'src'
+    if (template === 'default') {
+      await generate(path.resolve(__dirname, './template/default'), files, base)
+    } else if (template === 'default-ts') {
+      await generate(path.resolve(__dirname, './template/common-ts'), files)
+      await generate(path.resolve(__dirname, './template/default-ts'), files, base)
+    } else {
+      const ora = require('ora')
+      const home = require('user-home')
+      const download = require('download-git-repo')
 
-		if (template === 'default') {
-			await generate(path.resolve(__dirname, './template/default'), files, base)
-		} else {
-			const ora = require('ora')
-			const home = require('user-home')
-			const download = require('download-git-repo')
+      const spinner = ora('模板下载中...')
+      spinner.start()
 
-			const spinner = ora('模板下载中...')
-			spinner.start()
+      const tmp = path.join(home, '.uni-app/templates', template.replace(/[/:]/g, '-'), 'src')
 
-			const tmp = path.join(home, '.uni-app/templates', template.replace(/[\/:]/g, '-'), 'src')
+      if (fs.existsSync(tmp)) {
+        try {
+          require('rimraf').sync(tmp)
+        } catch (e) {
+          console.error(e)
+        }
+      }
 
-			if (fs.existsSync(tmp)) {
-				try {
-					require('rimraf').sync(tmp)
-				} catch (e) {
-					console.error(e)
-				}
-			}
+      await new Promise((resolve, reject) => {
+        download(template, tmp, err => {
+          spinner.stop()
+          if (err) {
+            return reject(err)
+          }
+          resolve()
+        })
+      })
 
-			await new Promise((resolve, reject) => {
-				download(template, tmp, err => {
-					spinner.stop()
-					if (err) {
-						return reject(err)
-					}
-					resolve()
-				})
-			})
+      await generate(tmp, files, base)
+    }
 
-			await generate(tmp, files, base)
-		}
-
-		await generate(path.resolve(__dirname, './template/common'), files)
-
-	})
+    await generate(path.resolve(__dirname, './template/common'), files)
+  })
 }
