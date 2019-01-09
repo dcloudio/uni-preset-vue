@@ -23,6 +23,10 @@ module.exports = [{
     value: 'dcloudio/uni-template-picture'
   },
   {
+    name: '新闻/资讯类模板',
+    value: 'dcloudio/uni-template-news'
+  },
+  {
     name: '自定义模板',
     value: 'custom'
   }

@@ -44,6 +44,15 @@ module.exports = (api, options, rootOptions) => {
         }
       }
     })
+  } else if (options.template === 'dcloudio/uni-template-news') {
+    api.extendPackage(pkg => {
+      return {
+        devDependencies: {
+          'node-sass': '^4.11.0',
+          'sass-loader': '^7.1.0'
+        }
+      }
+    })
   }
 
   api.render(async function (files) {
