@@ -39,7 +39,7 @@ module.exports = (api, options, rootOptions) => {
         devDependencies: {
           '@babel/plugin-syntax-typescript': '^7.2.0',
           '@dcloudio/types': '*',
-          '@vue/cli-plugin-typescript': '^3.2.2',
+          '@vue/cli-plugin-typescript': '^3.3.0',
           'typescript': api.hasPlugin('eslint') ? '~3.1.1' : '^3.0.0'
         }
       }
