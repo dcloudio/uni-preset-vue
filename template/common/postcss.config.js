@@ -1,6 +1,7 @@
 const pkg = require('./package.json')
 module.exports = {
   plugins: [
+    require('postcss-import'),
     require('autoprefixer')({
       browsers: pkg.browserslist
     }),

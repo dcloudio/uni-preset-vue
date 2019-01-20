@@ -3,7 +3,7 @@ const path = require('path')
 
 const isBinary = require('isbinaryfile')
 
-async function generate (dir, files, base = '') {
+async function generate (dir, files, base = '', rootOptions) {
   const glob = require('glob')
 
   glob.sync('**/*', {
@@ -16,7 +16,10 @@ async function generate (dir, files, base = '') {
     if (isBinary.sync(sourcePath)) {
       files[filename] = fs.readFileSync(sourcePath) // return buffer
     } else {
-      const content = fs.readFileSync(sourcePath, 'utf-8')
+      let content = fs.readFileSync(sourcePath, 'utf-8')
+      if (path.basename(filename) === 'manifest.json') {
+        content = content.replace('{{name}}', rootOptions.projectName)
+      }
       if (filename.charAt(0) === '_' && filename.charAt(1) !== '_') {
         files[`.${filename.slice(1)}`] = content
       } else if (filename.charAt(0) === '_' && filename.charAt(1) === '_') {
@@ -65,10 +68,10 @@ module.exports = (api, options, rootOptions) => {
     const base = 'src'
 
     if (template === 'default') {
-      await generate(path.resolve(__dirname, './template/default'), files, base)
+      await generate(path.resolve(__dirname, './template/default'), files, base, rootOptions)
     } else if (template === 'default-ts') {
       await generate(path.resolve(__dirname, './template/common-ts'), files)
-      await generate(path.resolve(__dirname, './template/default-ts'), files, base)
+      await generate(path.resolve(__dirname, './template/default-ts'), files, base, rootOptions)
     } else {
       const ora = require('ora')
       const home = require('user-home')
