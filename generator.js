@@ -18,7 +18,7 @@ async function generate (dir, files, base = '', rootOptions = {}) {
     } else {
       let content = fs.readFileSync(sourcePath, 'utf-8')
       if (path.basename(filename) === 'manifest.json') {
-        content = content.replace('{{name}}', rootOptions.projectName)
+        content = content.replace('{{name}}', rootOptions.projectName || '')
       }
       if (filename.charAt(0) === '_' && filename.charAt(1) !== '_') {
         files[`.${filename.slice(1)}`] = content
