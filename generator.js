@@ -3,7 +3,7 @@ const path = require('path')
 
 const isBinary = require('isbinaryfile')
 
-async function generate (dir, files, base = '', rootOptions) {
+async function generate (dir, files, base = '', rootOptions = {}) {
   const glob = require('glob')
 
   glob.sync('**/*', {
