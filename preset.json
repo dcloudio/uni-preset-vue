@@ -4,6 +4,7 @@
         "@dcloudio/vue-cli-plugin-uni": {
             "version": "0.9.34"
         },
+        "@dcloudio/vue-cli-plugin-hbuilderx": {},
         "@vue/cli-plugin-babel": {
             "version": "3.3.0",
             "presets": [
