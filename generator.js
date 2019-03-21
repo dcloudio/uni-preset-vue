@@ -32,6 +32,16 @@ async function generate (dir, files, base = '', rootOptions = {}) {
 }
 
 module.exports = (api, options, rootOptions) => {
+  if (options.template !== 'default-ts') {
+    api.extendPackage(pkg => {
+      return {
+        devDependencies: {
+          '@types/uni-app': '*',
+          '@types/html5plus': '*'
+        }
+      }
+    })
+  }
   if (options.template === 'default-ts') { // 启用 typescript
     api.extendPackage(pkg => {
       return {
@@ -41,8 +51,7 @@ module.exports = (api, options, rootOptions) => {
         },
         devDependencies: {
           '@babel/plugin-syntax-typescript': '^7.2.0',
-          '@types/uni-app': '*',
-          '@types/html5plus': '*',
+          '@dcloudio/types': '*',
           '@vue/cli-plugin-typescript': '^3.3.0',
           'typescript': api.hasPlugin('eslint') ? '~3.1.1' : '^3.0.0'
         }
