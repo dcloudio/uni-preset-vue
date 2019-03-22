@@ -32,6 +32,16 @@ async function generate (dir, files, base = '', rootOptions = {}) {
 }
 
 module.exports = (api, options, rootOptions) => {
+  if (options.template !== 'default-ts') {
+    api.extendPackage(pkg => {
+      return {
+        devDependencies: {
+          '@types/uni-app': '*',
+          '@types/html5plus': '*'
+        }
+      }
+    })
+  }
   if (options.template === 'default-ts') { // 启用 typescript
     api.extendPackage(pkg => {
       return {
