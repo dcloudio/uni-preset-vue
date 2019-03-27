@@ -47,7 +47,8 @@ module.exports = (api, options, rootOptions) => {
       return {
         dependencies: {
           'vue-class-component': '^6.3.2',
-          'vue-property-decorator': '^8.0.0'
+          'vue-property-decorator': '^8.0.0',
+          'regenerator-runtime':'^0.12.1'//锁定版本，避免高版本在小程序中出错
         },
         devDependencies: {
           '@babel/plugin-syntax-typescript': '^7.2.0',
