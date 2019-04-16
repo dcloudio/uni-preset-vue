@@ -41,7 +41,8 @@
             "sdkConfigs": { /* SDK配置 */
 
             }
-        }
+        },
+        "usingComponents":true
     },
     "quickapp": { /* 快应用特有相关 */
 
