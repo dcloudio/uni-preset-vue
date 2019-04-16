@@ -1,6 +1,6 @@
 const plugins = []
 
-if (process.env.UNI_PLATFORM === 'app-plus') {
+if (process.env.UNI_PLATFORM === 'app-plus' && process.env.UNI_USING_V8) {
   const path = require('path')
 
   const isWin = /^win/.test(process.platform)
