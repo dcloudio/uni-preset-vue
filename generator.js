@@ -35,7 +35,7 @@ module.exports = (api, options, rootOptions) => {
   api.extendPackage(pkg => {
     return {
       dependencies: {
-        'regenerator-runtime':'^0.12.1'//锁定版本，避免高版本在小程序中出错
+        'regenerator-runtime': '^0.12.1'// 锁定版本，避免高版本在小程序中出错
       }
     }
   })
