@@ -4,7 +4,7 @@ module.exports = {
     require('postcss-import'),
     require('autoprefixer')({
       browsers: pkg.browserslist,
-      remove:false
+      remove: false
     }),
     require('@dcloudio/vue-cli-plugin-uni/packages/postcss')
   ]
