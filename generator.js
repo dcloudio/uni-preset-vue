@@ -36,6 +36,9 @@ module.exports = (api, options, rootOptions) => {
     return {
       dependencies: {
         'regenerator-runtime': '^0.12.1'// 锁定版本，避免高版本在小程序中出错
+      },
+      devDependencies: {
+        'postcss-comment': '^2.0.0'
       }
     }
   })
