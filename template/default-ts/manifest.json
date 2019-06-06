@@ -53,5 +53,14 @@
         "setting" : {
         	"urlCheck" : true
         }
+    },
+    "mp-alipay" : {
+        "usingComponents" : true
+    },
+    "mp-baidu" : {
+        "usingComponents" : true
+    },
+    "mp-toutiao" : {
+        "usingComponents" : true
     }
 }

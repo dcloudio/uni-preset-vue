@@ -60,16 +60,13 @@
 		},
 		"usingComponents": true
 	},
-	"mp-baidu": { /* 百度小程序特有相关 */
-		"appid": "",
-		"setting": {
-			"urlCheck": false
-		}
-	},
-	"mp-toutiao": { /* 头条小程序特有相关 */
-		"appid": "",
-		"setting": {
-			"urlCheck": false
-		}
-	}
+	"mp-alipay" : {
+        "usingComponents" : true
+    },
+    "mp-baidu" : {
+        "usingComponents" : true
+    },
+    "mp-toutiao" : {
+        "usingComponents" : true
+    }
 }
