@@ -62,5 +62,8 @@
     },
     "mp-toutiao" : {
         "usingComponents" : true
+    },
+    "mp-qq" : {
+        "usingComponents" : true
     }
 }
