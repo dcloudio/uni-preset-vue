@@ -1,4 +1,3 @@
-const pkg = require('./package.json')
 module.exports = {
   parser: require('postcss-comment'),
   plugins: [
