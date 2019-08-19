@@ -32,6 +32,7 @@ async function generate (dir, files, base = '', rootOptions = {}) {
 }
 
 module.exports = (api, options, rootOptions) => {
+  console.log('alpha')
   api.extendPackage(pkg => {
     return {
       dependencies: {
