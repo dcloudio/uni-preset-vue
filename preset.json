@@ -1,9 +1,15 @@
 {
     "useConfigFiles": false,
     "plugins": {
-        "@dcloudio/vue-cli-plugin-uni": {},
-        "@dcloudio/vue-cli-plugin-uni-optimize": {},
-        "@dcloudio/vue-cli-plugin-hbuilderx": {},
+        "@dcloudio/vue-cli-plugin-uni": {
+            "version": "^1.0.0-alpha-22120190814001"
+        },
+        "@dcloudio/vue-cli-plugin-uni-optimize": {
+            "version": "^1.0.0-alpha-22120190814001"
+        },
+        "@dcloudio/vue-cli-plugin-hbuilderx": {
+            "version": "^1.0.0-alpha-22120190814001"
+        },
         "@vue/cli-plugin-babel": {
             "version": "3.5.1",
             "presets": [
