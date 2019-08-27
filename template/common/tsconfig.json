@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "types": [
+      "uni-app",
+      "html5plus",
+      "miniprogram-api-typings",
+      "mini-types"
+    ]
+  }
+}

@@ -35,10 +35,13 @@ module.exports = (api, options, rootOptions) => {
   api.extendPackage(pkg => {
     return {
       dependencies: {
-        'regenerator-runtime': '^0.12.1'// 锁定版本，避免高版本在小程序中出错
+        'regenerator-runtime': '^0.12.1',// 锁定版本，避免高版本在小程序中出错
+        '@dcloudio/uni-helper-json': '*'
       },
       devDependencies: {
-        'postcss-comment': '^2.0.0'
+        'postcss-comment': '^2.0.0',
+        'miniprogram-api-typings': '^2.8.0-2',
+        'mini-types': '*'
       }
     }
   })
@@ -86,7 +89,7 @@ module.exports = (api, options, rootOptions) => {
     const template = options.repo || options.template
 
     const base = 'src'
-
+    await generate(path.resolve(__dirname, './template/common'), files)
     if (template === 'default') {
       await generate(path.resolve(__dirname, './template/default'), files, base, rootOptions)
     } else if (template === 'default-ts') {
@@ -122,7 +125,5 @@ module.exports = (api, options, rootOptions) => {
 
       await generate(tmp, files, base)
     }
-
-    await generate(path.resolve(__dirname, './template/common'), files)
   })
 }
