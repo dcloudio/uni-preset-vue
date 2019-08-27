@@ -40,7 +40,7 @@ module.exports = (api, options, rootOptions) => {
       },
       devDependencies: {
         'postcss-comment': '^2.0.0',
-        'miniprogram-api-typings': '*',
+        'miniprogram-api-typings': '^2.8.0-2',
         'mini-types': '*'
       }
     }
