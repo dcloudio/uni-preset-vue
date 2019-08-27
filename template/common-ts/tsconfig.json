@@ -13,7 +13,9 @@
     "baseUrl": ".",
     "types": [
       "webpack-env",
-      "@dcloudio/types/uni-app"
+      "@dcloudio/types/uni-app",
+      "miniprogram-api-typings",
+      "mini-types"
     ],
     "paths": {
       "@/*": [
