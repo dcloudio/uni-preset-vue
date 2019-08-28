@@ -39,9 +39,7 @@ module.exports = (api, options, rootOptions) => {
         '@dcloudio/uni-helper-json': '*'
       },
       devDependencies: {
-        'postcss-comment': '^2.0.0',
-        'miniprogram-api-typings': '^2.8.0-2',
-        'mini-types': '*'
+        'postcss-comment': '^2.0.0'
       }
     }
   })
@@ -50,7 +48,9 @@ module.exports = (api, options, rootOptions) => {
       return {
         devDependencies: {
           '@types/uni-app': '*',
-          '@types/html5plus': '*'
+          '@types/html5plus': '*',
+          'miniprogram-api-typings': '^2.8.0-2',
+          'mini-types': '*'
         }
       }
     })
