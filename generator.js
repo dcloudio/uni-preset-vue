@@ -39,22 +39,13 @@ module.exports = (api, options, rootOptions) => {
         '@dcloudio/uni-helper-json': '*'
       },
       devDependencies: {
-        'postcss-comment': '^2.0.0'
+        'postcss-comment': '^2.0.0',
+        '@dcloudio/types': '*',
+        'miniprogram-api-typings': '*',
+        'mini-types': '*'
       }
     }
   })
-  if (options.template !== 'default-ts') {
-    api.extendPackage(pkg => {
-      return {
-        devDependencies: {
-          '@types/uni-app': '*',
-          '@types/html5plus': '*',
-          'miniprogram-api-typings': '^2.8.0-2',
-          'mini-types': '*'
-        }
-      }
-    })
-  }
   if (options.template === 'default-ts') { // 启用 typescript
     api.extendPackage(pkg => {
       return {
@@ -64,7 +55,6 @@ module.exports = (api, options, rootOptions) => {
         },
         devDependencies: {
           '@babel/plugin-syntax-typescript': '^7.2.0',
-          '@dcloudio/types': '*',
           '@vue/cli-plugin-typescript': '*',
           'typescript': api.hasPlugin('eslint') ? '~3.1.1' : '^3.0.0'
         }
