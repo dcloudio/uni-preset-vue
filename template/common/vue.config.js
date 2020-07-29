@@ -1,3 +1,3 @@
 process.env.UNI_USING_VUE3 = true
-process.env.UNI_USING_VUE3_OPTIONS_API = false
+process.env.UNI_USING_VUE3_OPTIONS_API = true
 module.exports = {}
