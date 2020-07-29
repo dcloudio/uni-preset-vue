@@ -36,7 +36,8 @@ module.exports = (api, options, rootOptions) => {
     return {
       dependencies: {
         'regenerator-runtime': '^0.12.1',// 锁定版本，避免高版本在小程序中出错
-        '@dcloudio/uni-helper-json': '*'
+        '@dcloudio/uni-helper-json': '*',
+        'vuex': '^4.0.0-beta.4'
       },
       devDependencies: {
         'postcss-comment': '^2.0.0',
