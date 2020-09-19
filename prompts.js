@@ -5,30 +5,6 @@ module.exports = [{
   choices: [{
     name: '默认模板',
     value: 'default'
-  },
-  {
-    name: '默认模板(TypeScript)',
-    value: 'default-ts'
-  },
-  {
-    name: 'Hello uni-app',
-    value: 'dcloudio/hello-uniapp'
-  },
-  {
-    name: '登录模板',
-    value: 'dcloudio/uni-template-login'
-  },
-  {
-    name: '看图模板',
-    value: 'dcloudio/uni-template-picture'
-  },
-  {
-    name: '新闻/资讯类模板',
-    value: 'dcloudio/uni-template-news'
-  },
-  {
-    name: '自定义模板',
-    value: 'custom'
   }
   ],
   default: 'None'
