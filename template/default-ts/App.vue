@@ -1,7 +1,8 @@
 <script lang="ts">
-    import Vue from 'vue';
-    export default Vue.extend({
-        mpType: 'app',
+    import {
+        defineComponent
+    } from 'vue'
+    export default defineComponent({
         onLaunch() {
             console.log('App Launch')
         },
@@ -11,9 +12,8 @@
         onHide() {
             console.log('App Hide')
         }
-    });
+    })
 </script>
-
 <style>
     /*每个页面公共css */
 </style>

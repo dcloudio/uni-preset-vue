@@ -5,6 +5,9 @@ module.exports = [{
   choices: [{
     name: '默认模板',
     value: 'default'
+  },{
+    name: '默认模板(TypeScript)',
+    value: 'default-ts'
   }
   ],
   default: 'None'

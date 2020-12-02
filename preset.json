@@ -1,4 +1,5 @@
 {
+    "vueVersion": "3",
     "useConfigFiles": false,
     "plugins": {
         "@dcloudio/vue-cli-plugin-uni": {
