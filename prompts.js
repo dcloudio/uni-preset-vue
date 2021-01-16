@@ -15,7 +15,7 @@ module.exports = [{
     value: 'dcloudio/hello-uniapp'
   },
   {
-    name: '登录模板',
+    name: '前后一体登录模板',
     value: 'dcloudio/uni-template-login'
   },
   {
