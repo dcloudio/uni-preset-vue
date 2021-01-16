@@ -1,5 +1,6 @@
 const fs = require('fs')
 const path = require('path')
+const fse = require('fs-extra')
 
 const isBinary = require('isbinaryfile')
 
@@ -113,7 +114,17 @@ module.exports = (api, options, rootOptions) => {
         })
       })
 
-      await generate(tmp, files, base)
+      const dirNames = ['cloudfunctions-aliyun', 'cloudfunctions-tcb']
+      dirNames.forEach(dirName => {
+        const dirPath = path.join(tmp, './', dirName)
+        if(fs.existsSync(dirPath)) {
+          fse.moveSync(dirPath, path.join(tmp, '../', dirName), {
+            overwrite: true
+          })
+        }
+      })
+
+      await generate(path.join(tmp, '../'), files, path.join(base, '../'))
     }
   })
 }
