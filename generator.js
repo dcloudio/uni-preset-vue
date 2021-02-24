@@ -40,6 +40,7 @@ module.exports = (api, options, rootOptions) => {
         '@dcloudio/uni-helper-json': '*'
       },
       devDependencies: {
+        "@babel/runtime": "~7.12.0",// 临时指定版本，7.13.x 会报错
         'postcss-comment': '^2.0.0',
         '@dcloudio/types': '*',
         'miniprogram-api-typings': '*',
