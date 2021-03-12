@@ -115,6 +115,23 @@ module.exports = (api, options, rootOptions) => {
         })
       })
 
+      // 合并模板依赖
+      const jsonPath = path.join(tmp, './package.json')
+      if (fs.existsSync(jsonPath)) {
+        try {
+          const json = fs.readFileSync(jsonPath, { encoding: 'utf-8' })
+          content = JSON.parse(json)
+          api.extendPackage(pkg => {
+            return {
+              dependencies: Object.assign({}, content.dependencies),
+              devDependencies: Object.assign({}, content.devDependencies)
+            }
+          })
+        } catch (error) {
+          console.warn('package.json merge failed')
+        }
+      }
+
       const dirNames = ['cloudfunctions-aliyun', 'cloudfunctions-tcb']
       dirNames.forEach(dirName => {
         const dirPath = path.join(tmp, './', dirName)
