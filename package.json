@@ -7,6 +7,7 @@
     "serve": "vite preview"
   },
   "dependencies": {
+	"@dcloudio/uni-components": "../uni-app-next/packages/uni-components",
     "@dcloudio/uni-h5": "../uni-app-next/packages/uni-h5",
     "@dcloudio/uni-h5-vue": "../uni-app-next/packages/uni-h5-vue",
     "@dcloudio/uni-shared": "../uni-app-next/packages/uni-shared",
