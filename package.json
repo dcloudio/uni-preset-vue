@@ -2,9 +2,9 @@
   "name": "uni-preset-vue",
   "version": "0.0.0",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "serve": "vite preview"
+    "dev": "uni -d uni:*",
+    "build": "uni build -d uni:*",
+    "dev:ssr": "uni -d uni:* --ssr"
   },
   "dependencies": {
 	"@dcloudio/uni-app": "../uni-app-next/packages/uni-app",
