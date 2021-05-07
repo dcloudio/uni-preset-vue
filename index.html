@@ -2,17 +2,19 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" href="/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vite App</title>
+    <!--preload-links-->
     <script>
-      document.addEventListener("DOMContentLoaded", function () {
+      document.addEventListener('DOMContentLoaded', function () {
         document.documentElement.style.fontSize =
-          document.documentElement.clientWidth / 23.4375 + "px";
-      });
+          document.documentElement.clientWidth / 23.4375 + 'px'
+      })
     </script>
+    <!--app-context-->
   </head>
-  <body id="app">
+  <body>
+    <div id="app"><!--app-html--></div>
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>
