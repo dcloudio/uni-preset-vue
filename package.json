@@ -8,17 +8,20 @@
   },
   "dependencies": {
 	"@dcloudio/uni-app": "../uni-app-next/packages/uni-app",
+	"@dcloudio/uni-cloud": "../uni-app-next/packages/uni-cloud",
 	"@dcloudio/uni-components": "../uni-app-next/packages/uni-components",
     "@dcloudio/uni-h5": "../uni-app-next/packages/uni-h5",
     "@dcloudio/uni-h5-vue": "../uni-app-next/packages/uni-h5-vue",
+	"@dcloudio/uni-i18n": "../uni-app-next/packages/uni-i18n",
     "@dcloudio/uni-shared": "../uni-app-next/packages/uni-shared",
-    "vue": "^3.0.11"
+    "vue": "link:../uni-app-next/packages/uni-h5-vue"
   },
   "devDependencies": {
     "@dcloudio/uni-cli-shared": "../uni-app-next/packages/uni-cli-shared",
     "@dcloudio/vite-plugin-uni": "../uni-app-next/packages/vite-plugin-uni",
     "@vitejs/plugin-vue": "^1.2.1",
     "@vue/compiler-sfc": "^3.0.11",
-    "vite": "^2.1.5"
+	"@vue/server-renderer": "^3.0.11",
+    "vite": "^2.2.3"
   }
 }
