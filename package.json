@@ -16,7 +16,9 @@
 	"@dcloudio/uni-i18n": "../uni-app-next/packages/uni-i18n",
     "@dcloudio/uni-shared": "../uni-app-next/packages/uni-shared",
 	"@vue/shared": "^3.1.0-beta.3",
-    "vue": "../uni-app-next/packages/uni-h5-vue"
+    "vue": "^3.1.0-beta.3",
+    "vue-router": "^4.0.7",
+    "vuex": "^4.0.0"
   },
   "devDependencies": {
     "@dcloudio/uni-cli-shared": "../uni-app-next/packages/uni-cli-shared",
