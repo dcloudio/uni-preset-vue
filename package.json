@@ -15,14 +15,15 @@
     "@dcloudio/uni-h5-vue": "../uni-app-next/packages/uni-h5-vue",
 	"@dcloudio/uni-i18n": "../uni-app-next/packages/uni-i18n",
     "@dcloudio/uni-shared": "../uni-app-next/packages/uni-shared",
-    "vue": "link:../uni-app-next/packages/uni-h5-vue"
+	"@vue/shared": "^3.1.0-beta.3",
+    "vue": "../uni-app-next/packages/uni-h5-vue"
   },
   "devDependencies": {
     "@dcloudio/uni-cli-shared": "../uni-app-next/packages/uni-cli-shared",
     "@dcloudio/vite-plugin-uni": "../uni-app-next/packages/vite-plugin-uni",
-    "@vitejs/plugin-vue": "^1.2.1",
-    "@vue/compiler-sfc": "^3.0.11",
-	"@vue/server-renderer": "^3.0.11",
-    "vite": "^2.2.3"
+    "@vitejs/plugin-vue": "^1.2.2",
+	"@vue/compiler-sfc": "^3.1.0-beta.3",
+	"@vue/server-renderer": "^3.1.0-beta.3",
+	"vite": "^2.3.2"
   }
 }
