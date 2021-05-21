@@ -2,10 +2,10 @@
   "name": "uni-preset-vue",
   "version": "0.0.0",
   "scripts": {
-    "dev": "uni",
-    "build": "uni build",
-    "dev:ssr": "uni --ssr",
-	"build:ssr": "uni build --ssr"
+    "dev:h5": "uni",
+    "build:h5": "uni build",
+    "dev:h5:ssr": "uni --ssr",
+	"build:h5:ssr": "uni build --ssr"
   },
   "dependencies": {
 	"@dcloudio/uni-app": "../uni-app-next/packages/uni-app",
@@ -17,7 +17,7 @@
     "@dcloudio/uni-shared": "../uni-app-next/packages/uni-shared",
 	"@vue/shared": "^3.1.0-beta.3",
     "vue": "^3.1.0-beta.3",
-    "vue-router": "^4.0.7",
+    "vue-router": "^4.0.8",
     "vuex": "^4.0.0"
   },
   "devDependencies": {
@@ -26,6 +26,6 @@
     "@vitejs/plugin-vue": "^1.2.2",
 	"@vue/compiler-sfc": "^3.1.0-beta.3",
 	"@vue/server-renderer": "^3.1.0-beta.3",
-	"vite": "^2.3.2"
+	"vite": "^2.3.3"
   }
 }
