@@ -10,28 +10,28 @@
     "build:h5:ssr": "uni build --ssr"
   },
   "dependencies": {
-    "@dcloudio/uni-app": "^v3.0.0-alpha-3000020210708001",
-    "@dcloudio/uni-app-plus": "^v3.0.0-alpha-3000020210708001",
-    "@dcloudio/uni-app-vue": "^v3.0.0-alpha-3000020210708001",
-    "@dcloudio/uni-cloud": "^v3.0.0-alpha-3000020210708001",
-    "@dcloudio/uni-components": "^v3.0.0-alpha-3000020210708001",
-    "@dcloudio/uni-h5": "^v3.0.0-alpha-3000020210708001",
-    "@dcloudio/uni-h5-vue": "^v3.0.0-alpha-3000020210708001",
-    "@dcloudio/uni-i18n": "^v3.0.0-alpha-3000020210708001",
-    "@dcloudio/uni-shared": "^v3.0.0-alpha-3000020210708001",
-    "@vue/shared": "^3.1.4",
-    "vue": "^3.1.4",
-    "vue-router": "^4.0.10",
+    "@dcloudio/uni-app": "^v3.0.0-alpha-3000020210809001",
+    "@dcloudio/uni-app-plus": "^v3.0.0-alpha-3000020210809001",
+    "@dcloudio/uni-app-vue": "^v3.0.0-alpha-3000020210809001",
+    "@dcloudio/uni-cloud": "^v3.0.0-alpha-3000020210809001",
+    "@dcloudio/uni-components": "^v3.0.0-alpha-3000020210809001",
+    "@dcloudio/uni-h5": "^v3.0.0-alpha-3000020210809001",
+    "@dcloudio/uni-h5-vue": "^v3.0.0-alpha-3000020210809001",
+    "@dcloudio/uni-i18n": "^v3.0.0-alpha-3000020210809001",
+    "@dcloudio/uni-shared": "^v3.0.0-alpha-3000020210809001",
+    "@vue/shared": "3.1.5",
+    "vue": "3.1.5",
+    "vue-router": "^4.0.11",
     "vuex": "^4.0.2"
   },
   "devDependencies": {
-    "@dcloudio/uni-app-vite": "^v3.0.0-alpha-3000020210708001",
-    "@dcloudio/uni-cli-shared": "^v3.0.0-alpha-3000020210708001",
-    "@dcloudio/uni-h5-vite": "^v3.0.0-alpha-3000020210708001",
-    "@dcloudio/vite-plugin-uni": "^v3.0.0-alpha-3000020210708001",
-    "@vitejs/plugin-vue": "^1.2.4",
-    "@vue/compiler-sfc": "^3.1.4",
-    "@vue/server-renderer": "^3.1.4",
-    "vite": "^2.4.1"
+    "@dcloudio/uni-app-vite": "^v3.0.0-alpha-3000020210809001",
+    "@dcloudio/uni-cli-shared": "^v3.0.0-alpha-3000020210809001",
+    "@dcloudio/uni-h5-vite": "^v3.0.0-alpha-3000020210809001",
+    "@dcloudio/vite-plugin-uni": "^v3.0.0-alpha-3000020210809001",
+    "@vitejs/plugin-vue": "1.3.0",
+    "@vue/compiler-sfc": "3.1.5",
+    "@vue/server-renderer": "3.1.5",
+    "vite": "2.4.4"
   }
 }
