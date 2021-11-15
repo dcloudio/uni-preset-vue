@@ -1,6 +1,5 @@
 const {
-  uniPostcssPlugin,
-  parseRpx2UnitOnce
+  uniPostcssPlugin
 } = require('@dcloudio/uni-cli-shared')
 module.exports = {
   plugins: [
