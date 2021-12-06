@@ -33,6 +33,10 @@ async function generate (dir, files, base = '', rootOptions = {}) {
 }
 
 module.exports = (api, options, rootOptions) => {
+  const templateWithSass = [
+    'dcloudio/hello-uniapp',
+    'dcloudio/uni-template-news'
+  ]
   api.extendPackage(pkg => {
     return {
       dependencies: {
@@ -62,7 +66,7 @@ module.exports = (api, options, rootOptions) => {
         }
       }
     })
-  } else if (options.template === 'dcloudio/uni-template-news') {
+  } else if (templateWithSass.includes(options.template)) {
     api.extendPackage(pkg => {
       return {
         devDependencies: {
