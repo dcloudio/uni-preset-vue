@@ -47,7 +47,7 @@
     "vuex": "^4.0.2"
   },
   "devDependencies": {
-    "@dcloudio/types": "^2.5.13",
+    "@dcloudio/types": "^2.5.14",
     "@dcloudio/uni-automator": "^3.0.0-alpha-3030120211213002",
     "@dcloudio/uni-cli-shared": "^3.0.0-alpha-3030120211213002",
     "@dcloudio/vite-plugin-uni": "^3.0.0-alpha-3030120211213002",
