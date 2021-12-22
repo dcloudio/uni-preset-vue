@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "dev:app": "uni -p app",
+    "dev:custom": "uni -p",
     "dev:h5": "uni",
     "dev:h5:ssr": "uni --ssr",
     "dev:mp-alipay": "uni -p mp-alipay",
@@ -16,6 +17,7 @@
     "dev:quickapp-webview-huawei": "uni -p quickapp-webview-huawei",
     "dev:quickapp-webview-union": "uni -p quickapp-webview-union",
     "build:app": "uni build -p app",
+    "build:custom": "uni build -p",
     "build:h5": "uni build",
     "build:h5:ssr": "uni build --ssr",
     "build:mp-alipay": "uni build -p mp-alipay",
