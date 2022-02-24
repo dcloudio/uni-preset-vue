@@ -70,7 +70,7 @@ module.exports = (api, options, rootOptions) => {
     api.extendPackage(pkg => {
       return {
         devDependencies: {
-          'node-sass': '^4.14.1',
+          'sass': '^1.49.8',
           'sass-loader': '^8.0.2'
         }
       }
