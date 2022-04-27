@@ -53,6 +53,6 @@
     "@dcloudio/uni-automator": "^3.0.0-alpha-3040820220424001",
     "@dcloudio/uni-cli-shared": "^3.0.0-alpha-3040820220424001",
     "@dcloudio/vite-plugin-uni": "^3.0.0-alpha-3040820220424001",
-    "vite": "^2.9.5"
+    "vite": "^2.9.6"
   }
 }
