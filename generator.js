@@ -1,5 +1,6 @@
 const fs = require('fs')
 const path = require('path')
+const fse = require('fs-extra')
 
 const isBinary = require('isbinaryfile')
 
@@ -32,6 +33,10 @@ async function generate (dir, files, base = '', rootOptions = {}) {
 }
 
 module.exports = (api, options, rootOptions) => {
+  const templateWithSass = [
+    'dcloudio/hello-uniapp',
+    'dcloudio/uni-template-news'
+  ]
   api.extendPackage(pkg => {
     return {
       dependencies: {
@@ -39,6 +44,7 @@ module.exports = (api, options, rootOptions) => {
         '@dcloudio/uni-helper-json': '*'
       },
       devDependencies: {
+        "@babel/runtime": "~7.12.0",// 临时指定版本，7.13.x 会报错
         'postcss-comment': '^2.0.0',
         '@dcloudio/types': '*',
         'miniprogram-api-typings': '*',
@@ -55,17 +61,17 @@ module.exports = (api, options, rootOptions) => {
         },
         devDependencies: {
           '@babel/plugin-syntax-typescript': '^7.2.0',
-          '@vue/cli-plugin-typescript': '*',
+          '@vue/cli-plugin-typescript': '~4.5.11',
           'typescript': api.hasPlugin('eslint') ? '~3.1.1' : '^3.0.0'
         }
       }
     })
-  } else if (options.template === 'dcloudio/uni-template-news') {
+  } else if (templateWithSass.includes(options.template)) {
     api.extendPackage(pkg => {
       return {
         devDependencies: {
-          'node-sass': '^4.11.0',
-          'sass-loader': '^7.1.0'
+          'sass': '^1.49.8',
+          'sass-loader': '^8.0.2'
         }
       }
     })
@@ -113,7 +119,34 @@ module.exports = (api, options, rootOptions) => {
         })
       })
 
-      await generate(tmp, files, base)
+      // 合并模板依赖
+      const jsonPath = path.join(tmp, './package.json')
+      if (fs.existsSync(jsonPath)) {
+        try {
+          const json = fs.readFileSync(jsonPath, { encoding: 'utf-8' })
+          content = JSON.parse(json)
+          api.extendPackage(pkg => {
+            return {
+              dependencies: Object.assign({}, content.dependencies),
+              devDependencies: Object.assign({}, content.devDependencies)
+            }
+          })
+        } catch (error) {
+          console.warn('package.json merge failed')
+        }
+      }
+
+      const dirNames = ['cloudfunctions-aliyun', 'cloudfunctions-tcb']
+      dirNames.forEach(dirName => {
+        const dirPath = path.join(tmp, './', dirName)
+        if(fs.existsSync(dirPath)) {
+          fse.moveSync(dirPath, path.join(tmp, '../', dirName), {
+            overwrite: true
+          })
+        }
+      })
+
+      await generate(path.join(tmp, '../'), files, path.join(base, '../'))
     }
   })
 }
