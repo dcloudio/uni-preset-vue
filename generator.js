@@ -46,7 +46,7 @@ module.exports = (api, options, rootOptions) => {
       devDependencies: {
         "@babel/runtime": "~7.12.0",// 临时指定版本，7.13.x 会报错
         'postcss-comment': '^2.0.0',
-        '@dcloudio/types': '*',
+        '@dcloudio/types': '^2.6.7',
         'miniprogram-api-typings': '*',
         'mini-types': '*'
       }
