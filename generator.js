@@ -46,7 +46,7 @@ module.exports = (api, options, rootOptions) => {
       devDependencies: {
         "@babel/runtime": "~7.17.9",// 临时指定版本，7.13.x 会报错
         'postcss-comment': '^2.0.0',
-        '@dcloudio/types': '^2.6.7',
+        '@dcloudio/types': '^3.0.4',
         'miniprogram-api-typings': '*',
         'mini-types': '*'
       },
@@ -94,6 +94,17 @@ module.exports = (api, options, rootOptions) => {
     } else if (template === 'default-ts') {
       await generate(path.resolve(__dirname, './template/common-ts'), files)
       await generate(path.resolve(__dirname, './template/default-ts'), files, base, rootOptions)
+
+      // default-ts 模板删除 jsconfig.json
+      process.nextTick(() => {
+        const folderPath = path.resolve(process.cwd(),rootOptions.projectName)
+        const jsconfigPath = path.resolve(folderPath,'./jsconfig.json')
+        const tsconfigPath = path.resolve(folderPath,'./tsconfig.json')
+
+        if(fs.existsSync(jsconfigPath) && fs.existsSync(tsconfigPath)){
+          fs.unlinkSync(jsconfigPath)
+        }
+      })
     } else {
       const ora = require('ora')
       const home = require('user-home')
