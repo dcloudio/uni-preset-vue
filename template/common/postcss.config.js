@@ -1,6 +1,6 @@
 const path = require('path')
-module.exports = {
-  parser: require('postcss-comment'),
+const webpack = require('webpack')
+const config = {
   plugins: [
     require('postcss-import')({
       resolve (id, basedir, importOptions) {
@@ -20,3 +20,7 @@ module.exports = {
     require('@dcloudio/vue-cli-plugin-uni/packages/postcss')
   ]
 }
+if (webpack.version[0] <= 4) {
+  options.parser = require('postcss-comment')
+}
+module.exports = config

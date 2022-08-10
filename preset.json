@@ -2,13 +2,13 @@
     "useConfigFiles": false,
     "plugins": {
         "@dcloudio/vue-cli-plugin-uni": {
-            "version": "^2.0.1-alpha-33020211130001"
+            "version": "^2.0.1-alpha-35420220810001"
         },
         "@dcloudio/vue-cli-plugin-uni-optimize": {
-            "version": "^2.0.1-alpha-33020211130001"
+            "version": "^2.0.1-alpha-35420220810001"
         },
         "@dcloudio/vue-cli-plugin-hbuilderx": {
-            "version": "^2.0.1-alpha-33020211130001"
+            "version": "^2.0.1-alpha-35420220810001"
         },
         "@vue/cli-plugin-babel": {
             "presets": [
