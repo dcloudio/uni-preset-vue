@@ -49,7 +49,7 @@
     "vuex": "^4.0.2"
   },
   "devDependencies": {
-    "@dcloudio/types": "^3.0.7",
+    "@dcloudio/types": "^3.0.13",
     "@dcloudio/uni-automator": "^3.0.0-alpha-3050420220804003",
     "@dcloudio/uni-cli-shared": "^3.0.0-alpha-3050420220804003",
     "@dcloudio/uni-stacktracey": "^3.0.0-alpha-3050420220804003",
