@@ -57,6 +57,7 @@ module.exports = (api, options, rootOptions) => {
   })
   if (options.template === 'default-ts') { // 启用 typescript
     api.extendPackage(pkg => {
+      const isV4 = api.cliVersion.split('.')[0] === '4'
       return {
         dependencies: {
           'vue-class-component': '^6.3.2',
@@ -64,8 +65,8 @@ module.exports = (api, options, rootOptions) => {
         },
         devDependencies: {
           '@babel/plugin-syntax-typescript': '^7.2.0',
-          '@vue/cli-plugin-typescript': '~4.5.11',
-          'typescript': api.hasPlugin('eslint') ? '~3.1.1' : '^3.0.0'
+          '@vue/cli-plugin-typescript': '~' + api.cliServiceVersion,
+          'typescript': isV4 ? '~4.1.5' : '~4.5.5'
         }
       }
     })
