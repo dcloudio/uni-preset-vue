@@ -3,6 +3,8 @@
   "version": "0.0.0",
   "scripts": {
     "dev:app": "uni -p app",
+    "dev:app-android": "uni -p app-android",
+    "dev:app-ios": "uni -p app-ios",
     "dev:custom": "uni -p",
     "dev:h5": "uni",
     "dev:h5:ssr": "uni --ssr",
@@ -17,6 +19,8 @@
     "dev:quickapp-webview-huawei": "uni -p quickapp-webview-huawei",
     "dev:quickapp-webview-union": "uni -p quickapp-webview-union",
     "build:app": "uni build -p app",
+    "build:app-android": "uni build -p app-android",
+    "build:app-ios": "uni build -p app-ios",
     "build:custom": "uni build -p",
     "build:h5": "uni build",
     "build:h5:ssr": "uni build --ssr",
