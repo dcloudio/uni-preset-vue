@@ -3,5 +3,5 @@ import App from './App.vue'
 
 Vue.config.productionTip = false
 
-const app = new (typeof App === 'object' ? Vue.extend(Object.assign({ mpType: 'app' }, App)) : App)
+const app = new (typeof App === 'function' ? App : Vue.extend(Object.assign({ mpType: 'app' }, App)))
 app.$mount();
