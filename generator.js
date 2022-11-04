@@ -55,6 +55,16 @@ module.exports = (api, options, rootOptions) => {
       }
     }
   })
+  api.extendPackage(pkg => {
+    return {
+      dependencies: {
+        'vue': '>= 2.6.14 < 2.7'
+      },
+      devDependencies: {
+        'vue-template-compiler': '>= 2.6.14 < 2.7',
+      }
+    }
+  }, { forceOverwrite: true })
   if (options.template === 'default-ts') { // 启用 typescript
     api.extendPackage(pkg => {
       const isV4 = api.cliVersion.split('.')[0] === '4'
@@ -98,11 +108,11 @@ module.exports = (api, options, rootOptions) => {
 
       // default-ts 模板删除 jsconfig.json
       process.nextTick(() => {
-        const folderPath = path.resolve(process.cwd(),rootOptions.projectName)
-        const jsconfigPath = path.resolve(folderPath,'./jsconfig.json')
-        const tsconfigPath = path.resolve(folderPath,'./tsconfig.json')
+        const folderPath = path.resolve(process.cwd(), rootOptions.projectName)
+        const jsconfigPath = path.resolve(folderPath, './jsconfig.json')
+        const tsconfigPath = path.resolve(folderPath, './tsconfig.json')
 
-        if(fs.existsSync(jsconfigPath) && fs.existsSync(tsconfigPath)){
+        if (fs.existsSync(jsconfigPath) && fs.existsSync(tsconfigPath)) {
           fs.unlinkSync(jsconfigPath)
         }
       })
