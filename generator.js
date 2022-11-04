@@ -41,7 +41,9 @@ module.exports = (api, options, rootOptions) => {
     return {
       dependencies: {
         'regenerator-runtime': '^0.12.1',// 锁定版本，避免高版本在小程序中出错
-        '@dcloudio/uni-helper-json': '*'
+        '@dcloudio/uni-helper-json': '*',
+        'vue': '>= 2.6.14 < 2.7',
+        'vue-template-compiler': '>= 2.6.14 < 2.7',
       },
       devDependencies: {
         "@babel/runtime": "~7.17.9",// 临时指定版本，7.13.x 会报错
