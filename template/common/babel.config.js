@@ -51,6 +51,10 @@ process.UNI_LIBRARIES.forEach(libraryName => {
   ])
 })
 
+if (process.env.UNI_PLATFORM !== 'h5') {
+  plugins.push('@babel/plugin-transform-runtime')
+}
+
 const config = {
   presets: [
     [

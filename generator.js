@@ -39,19 +39,12 @@ module.exports = (api, options, rootOptions) => {
   ]
   api.extendPackage(pkg => {
     return {
-      dependencies: {
-        'regenerator-runtime': '^0.12.1',// 锁定版本，避免高版本在小程序中出错
-        '@dcloudio/uni-helper-json': '*'
-      },
       devDependencies: {
-        "@babel/runtime": "~7.17.9",// 临时指定版本，7.13.x 会报错
-        'postcss-comment': '^2.0.0',
+        '@dcloudio/uni-helper-json': '*',
         '@dcloudio/types': '^3.0.4',
         'miniprogram-api-typings': '*',
-        'mini-types': '*'
-      },
-      resolutions: {
-        "@babel/runtime": "~7.17.9"
+        'mini-types': '*',
+        'postcss-comment': '^2.0.0'
       }
     }
   })
