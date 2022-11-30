@@ -61,7 +61,8 @@ const config = {
       '@vue/app',
       {
         modules: webpack.version[0] > 4 ? 'auto' : 'commonjs',
-        useBuiltIns: process.env.UNI_PLATFORM === 'h5' ? 'usage' : 'entry'
+        useBuiltIns: process.env.UNI_PLATFORM === 'h5' ? 'usage' : 'entry',
+        exclude: ['h5', 'app-plus'].includes(process.env.UNI_PLATFORM) ? undefined : ['@babel/plugin-transform-async-to-generator', '@babel/plugin-transform-regenerator']
       }
     ]
   ],
