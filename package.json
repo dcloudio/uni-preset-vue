@@ -58,6 +58,6 @@
     "@dcloudio/uni-stacktracey": "3.0.0-alpha-3061020221121002",
     "@dcloudio/vite-plugin-uni": "3.0.0-alpha-3061020221121002",
     "typescript": "^4.8.4",
-    "vite": "^3.2.4"
+    "vite": "3.2.4"
   }
 }
