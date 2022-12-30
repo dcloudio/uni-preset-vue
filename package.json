@@ -52,11 +52,11 @@
     "vue-i18n": "^9.1.9"
   },
   "devDependencies": {
-    "@dcloudio/types": "^3.0.17",
+    "@dcloudio/types": "^3.2.7",
     "@dcloudio/uni-automator": "3.0.0-alpha-3061420221216001",
     "@dcloudio/uni-cli-shared": "3.0.0-alpha-3061420221216001",
     "@dcloudio/uni-stacktracey": "3.0.0-alpha-3061420221216001",
     "@dcloudio/vite-plugin-uni": "3.0.0-alpha-3061420221216001",
-    "vite": "3.2.4"
+    "vite": "4.0.3"
   }
 }
