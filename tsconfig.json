@@ -2,6 +2,10 @@
   "extends": "@vue/tsconfig/tsconfig.json",
   "compilerOptions": {
     "sourceMap": true,
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"]
+    },
     "lib": ["esnext", "dom"],
     "types": ["@dcloudio/types"]
   },
