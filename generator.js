@@ -41,7 +41,7 @@ module.exports = (api, options, rootOptions) => {
     return {
       devDependencies: {
         '@dcloudio/uni-helper-json': '*',
-        '@dcloudio/types': '^3.0.4',
+        '@dcloudio/types': '^3.3.2',
         'miniprogram-api-typings': '*',
         'mini-types': '*',
         'postcss-comment': '^2.0.0'
