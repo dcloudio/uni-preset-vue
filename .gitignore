@@ -6,6 +6,7 @@
 *.jshintrc
 .eslintrc.json
 *.markdown
+node_modules
 Makefile
 test/
 LICENSE
